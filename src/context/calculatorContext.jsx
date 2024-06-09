@@ -1,6 +1,6 @@
 import { useState, useContext, createContext } from "react";
 
-export const CalculatorContext = createContext();
+const CalculatorContext = createContext();
 
 export const useCalculator = () => {
 	const context = useContext(CalculatorContext);
