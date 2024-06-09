@@ -1,13 +1,18 @@
 .display {
 	display: flex;
 	justify-content: flex-end;
+	align-items: flex-start;
 	margin: 5px 0px 15px 0px;
 
 	input {
 		flex: 1;
+		max-width: 252px;
 		text-align: right;
 		font-size: 40px;
 		padding: 5px 10px;
 		background-color: rgb(122, 102, 235);
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 }

@@ -27,10 +27,13 @@ export const CalculatorProvider = ({ children }) => {
 
 	const computeValue = () => {
 		try {
-			const expression = value.replace(/\^/g, "**");
+			if (value) {
+				const expression = eval(value.replace(/\^/g, "**"));
 
-			setValue(eval(expression));
+				setValue(expression.toString());
+			}
 		} catch (error) {
+			setValue(error);
 			console.log(error);
 		}
 	};
