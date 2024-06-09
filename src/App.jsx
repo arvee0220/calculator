@@ -30,33 +30,33 @@ const App = () => {
 						<input type="text" value={value} readOnly />
 					</div>
 					<div>
-						<input className="" type="button" value="AC" onClick={resetHandler} />
-						<input className="" type="button" value="DE" onClick={deleteValue} />
-						<input className="" type="button" value="." onClick={valueHandler} />
-						<input className="" type="button" value="/" onClick={valueHandler} />
+						<input type="button" value="AC" onClick={resetHandler} />
+						<input type="button" value="DE" onClick={deleteValue} />
+						<input type="button" value="." onClick={valueHandler} />
+						<input type="button" value="/" onClick={valueHandler} />
 					</div>
 					<div>
-						<input className="" type="button" value="7" onClick={valueHandler} />
-						<input className="" type="button" value="8" onClick={valueHandler} />
-						<input className="" type="button" value="9" onClick={valueHandler} />
-						<input className="" type="button" value="*" onClick={valueHandler} />
+						<input type="button" value="7" onClick={valueHandler} />
+						<input type="button" value="8" onClick={valueHandler} />
+						<input type="button" value="9" onClick={valueHandler} />
+						<input type="button" value="*" onClick={valueHandler} />
 					</div>
 					<div>
-						<input className="" type="button" value="4" onClick={valueHandler} />
-						<input className="" type="button" value="5" onClick={valueHandler} />
-						<input className="" type="button" value="6" onClick={valueHandler} />
-						<input className="" type="button" value="+" onClick={valueHandler} />
+						<input type="button" value="4" onClick={valueHandler} />
+						<input type="button" value="5" onClick={valueHandler} />
+						<input type="button" value="6" onClick={valueHandler} />
+						<input type="button" value="+" onClick={valueHandler} />
 					</div>
 					<div>
-						<input className="" type="button" value="1" onClick={valueHandler} />
-						<input className="" type="button" value="2" onClick={valueHandler} />
-						<input className="" type="button" value="3" onClick={valueHandler} />
-						<input className="" type="button" value="-" onClick={valueHandler} />
+						<input type="button" value="1" onClick={valueHandler} />
+						<input type="button" value="2" onClick={valueHandler} />
+						<input type="button" value="3" onClick={valueHandler} />
+						<input type="button" value="-" onClick={valueHandler} />
 					</div>
 					<div>
-						<input className="" type="button" value="00" onClick={valueHandler} />
-						<input className="" type="button" value="0" onClick={valueHandler} />
-						<input className="" type="button" value="^" onClick={valueHandler} />
+						<input type="button" value="00" onClick={valueHandler} />
+						<input type="button" value="0" onClick={valueHandler} />
+						<input type="button" value="^" onClick={valueHandler} />
 						<input className="equal" type="button" value="=" onClick={computeValue} />
 					</div>
 				</form>
