@@ -11,14 +11,14 @@ export const useCalculator = () => {
 };
 
 export const CalculatorProvider = ({ children }) => {
-	const [value, setValue] = useState("");
+	const [value, setValue] = useState("0");
 
 	const valueHandler = (input) => {
 		setValue((prev) => prev + input);
 	};
 
 	const resetHandler = () => {
-		setValue("");
+		setValue(value);
 	};
 
 	const deleteValue = () => {
