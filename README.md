@@ -2,7 +2,7 @@
 
 Created using Vite React & Sass
 
-I did not focus much on styling as this project is to showcase my code structure.
+I did not focus much on styling as this project is to showcase my current knowledge about the framework and some Software Engineering Principles.
 
 This app has two branches:
 main branch: Uses single component(App.jsx) and implementation of useState hook.
