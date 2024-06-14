@@ -2,6 +2,8 @@ import { useState, useContext, createContext } from "react";
 
 const CalculatorContext = createContext();
 
+const INITIAL_VALUE = "0";
+
 export const useCalculator = () => {
 	const context = useContext(CalculatorContext);
 	if (!context) {
@@ -11,18 +13,26 @@ export const useCalculator = () => {
 };
 
 export const CalculatorProvider = ({ children }) => {
-	const [value, setValue] = useState("0");
+	const [value, setValue] = useState(INITIAL_VALUE);
 
 	const valueHandler = (input) => {
-		setValue((prev) => prev + input);
+		if (value === "0") {
+			setValue(input);
+		} else {
+			setValue((prev) => prev + input);
+		}
 	};
 
 	const resetHandler = () => {
-		setValue(value);
+		setValue(INITIAL_VALUE);
 	};
 
 	const deleteValue = () => {
-		setValue((prev) => prev.slice(0, -1));
+		if (value.length === 1) {
+			setValue(INITIAL_VALUE);
+		} else {
+			setValue((prev) => prev.slice(0, -1));
+		}
 	};
 
 	const computeValue = () => {
