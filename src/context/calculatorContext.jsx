@@ -9,7 +9,7 @@ const isNumericInput = (input) => {
 	return !isNaN(parseFloat(input)) && isFinite(input);
 };
 
-const regEx = /[+\-*\/]/;
+const regEx = /[+\-*\.\/]/;
 
 const isMathematicalSymbol = (char) => {
 	return regEx.test(char);
