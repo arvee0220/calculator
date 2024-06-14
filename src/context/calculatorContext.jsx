@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { useState, useContext, createContext } from "react";
 
 const CalculatorContext = createContext();
@@ -9,7 +10,6 @@ const isNumericInput = (input) => {
 };
 
 const isMathematicalSymbol = (char) => {
-	// eslint-disable-next-line no-useless-escape
 	const regEx = /[+\-*\/]/;
 	return regEx.test(char);
 };
@@ -75,9 +75,10 @@ export const CalculatorProvider = ({ children }) => {
 				break;
 
 			case value === INITIAL_VALUE && isNumericInput(input):
-				setValue(input);
+				setValue(input === "0" || input === "00" ? INITIAL_VALUE : input);
 
 				break;
+
 			default:
 				setValue((prev) => prev + input);
 
@@ -101,7 +102,7 @@ export const CalculatorProvider = ({ children }) => {
 
 	const computeValue = () => {
 		try {
-			if (value) {
+			if (value !== INITIAL_VALUE) {
 				const expression = eval(value.replace(/\^/g, "**"));
 
 				setValue(expression.toString());
