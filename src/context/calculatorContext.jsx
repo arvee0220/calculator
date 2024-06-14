@@ -9,8 +9,9 @@ const isNumericInput = (input) => {
 	return !isNaN(parseFloat(input)) && isFinite(input);
 };
 
+const regEx = /[+\-*\/]/;
+
 const isMathematicalSymbol = (char) => {
-	const regEx = /[+\-*\/]/;
 	return regEx.test(char);
 };
 
@@ -46,6 +47,8 @@ export const CalculatorProvider = ({ children }) => {
 
 	const valueHandler = (input) => {
 		const lastChar = value[value.length - 1];
+		const isLastCharMathSymbol = isMathematicalSymbol(lastChar);
+		const isNewCharMathSymbol = isMathematicalSymbol(input);
 
 		switch (true) {
 			case computed && isNumericInput(input):
@@ -68,15 +71,18 @@ export const CalculatorProvider = ({ children }) => {
 
 				break;
 
-			case value === INITIAL_VALUE && !isNumericInput(input):
+			case value === INITIAL_VALUE && computed === true && !isNumericInput(input):
 				break;
 
-			case value === INITIAL_VALUE && computed === true && !isNumericInput(input):
+			case value === INITIAL_VALUE && !isNumericInput(input):
 				break;
 
 			case value === INITIAL_VALUE && isNumericInput(input):
 				setValue(input === "0" || input === "00" ? INITIAL_VALUE : input);
 
+				break;
+
+			case isLastCharMathSymbol && isNewCharMathSymbol:
 				break;
 
 			default:
